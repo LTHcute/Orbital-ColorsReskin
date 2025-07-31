@@ -28,7 +28,7 @@ public class Obstacle : MonoBehaviour
 	{
 		aimAnim.gameObject.GetComponent<SpriteRenderer>().color = _color;
 		waveAnim.gameObject.GetComponent<SpriteRenderer>().color = _color;
-		base.gameObject.GetComponent<SpriteRenderer>().color = _color;
+		//base.gameObject.GetComponent<SpriteRenderer>().color = _color;
 		color = _color;
 		id = obstacleId;
 		if (obstacleId == 1)
@@ -193,16 +193,16 @@ public class Obstacle : MonoBehaviour
 			num += num2;
 			int imagePos = Random.Range(0, GameManager.Instance.imageTable.Length);
             Sprite imageObstacle =GameManager.Instance.imageTable[imagePos];
-			if(imagePos==0)
-			{
-				smallBalls[i].tag = "Gift";
+			//if(imagePos==0)
+			//{
+			//	smallBalls[i].tag = "Gift";
 
-            }
-			else
-			{
-                smallBalls[i].tag = "Obstacle";
-            }
-            smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = imageObstacle;
+   //         }
+			//else
+			//{
+   //             smallBalls[i].tag = "Obstacle";
+   //         }
+   //         smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = imageObstacle;
             //Color lhs = GameManager.Instance.colorTable[Random.Range(0, GameManager.Instance.colorTable.Length)];
             //if (lhs == color)
             //{
