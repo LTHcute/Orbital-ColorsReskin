@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
+		
 		if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButtonDown(0))
 		{
 			if (!uIManager.IsButton() && readyToShoot && !movingPlayer)
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
 		ResetPlayerAnimation();
 		obstacleId = 0;
 		tempColor = colorTable[Random.Range(0, colorTable.Length)];
-		player.GetComponent<SpriteRenderer>().color = tempColor;
+		//player.GetComponent<SpriteRenderer>().color = tempColor;
 		previousObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
 		previousObstacle.transform.position = new Vector2(0f, -3f);
 		tempObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
@@ -156,7 +157,8 @@ public class GameManager : MonoBehaviour
 
 	public void RestartGame()
 	{
-		if (uIManager.gameState == GameState.PAUSED)
+        Debug.Log("2");
+        if (uIManager.gameState == GameState.PAUSED)
 		{
 			Time.timeScale = 1f;
 		}

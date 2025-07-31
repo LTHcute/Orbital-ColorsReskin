@@ -65,6 +65,7 @@ public class UIManager : MonoBehaviour
 
 	public void ShowMainMenu()
 	{
+		Debug.Log("show main menu");
 		ScoreManager.Instance.ResetCurrentScore();
 		clicked = true;
 		mainMenuGui.SetActive(value: true);
