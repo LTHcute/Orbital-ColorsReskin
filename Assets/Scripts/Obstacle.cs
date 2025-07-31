@@ -1,4 +1,4 @@
-
+﻿
 
 using System.Collections;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ public class Obstacle : MonoBehaviour
 		id = obstacleId;
 		if (obstacleId == 1)
 		{
-			CreateSmallBalls(10);
+			CreateSmallBalls(7);
 		}
 		else if (obstacleId > 1)
 		{
@@ -80,25 +80,40 @@ public class Obstacle : MonoBehaviour
 		{
 			return;
 		}
-		if (collision.gameObject.GetComponent<SpriteRenderer>().color == color)
-		{
-			PlayWaveIn();
-			ActivateAim();
-			for (int i = 0; i < smallBalls.Count; i++)
-			{
-				if (smallBalls[i] != null)
-				{
-					smallBalls[i].GetComponent<SmallBall>().HideBall();
-				}
-			}
-		}
-		else
-		{
-			PlayWaveOut();
-			GameManager.Instance.PlayerDeath();
-			GameManager.Instance.GameOver();
-			GameManager.Instance.camObject.GetComponent<CameraFollowTarget>().ShakeCamera();
-		}
+		//Debug.Log(collision.gameObject.tag);
+		//if(collision.gameObject.tag == "Gift")
+		//{
+		//	Debug.Log("Va vào gift");
+  //          PlayWaveIn();
+  //          ActivateAim();
+  //          for (int i = 0; i < smallBalls.Count; i++)
+  //          {
+  //              if (smallBalls[i] != null)
+  //              {
+  //                  smallBalls[i].GetComponent<SmallBall>().HideBall();
+  //              }
+  //          }
+  //      }	
+		//if (collision.gameObject.GetComponent<SpriteRenderer>().color == color)
+		//{
+		//	PlayWaveIn();
+		//	ActivateAim();
+		//	for (int i = 0; i < smallBalls.Count; i++)
+		//	{
+		//		if (smallBalls[i] != null)
+		//		{
+		//			smallBalls[i].GetComponent<SmallBall>().HideBall();
+		//		}
+		//	}
+		//}
+		//else
+		//{
+		//	Debug.Log("thua");
+		//	PlayWaveOut();
+		//	GameManager.Instance.PlayerDeath();
+		//	GameManager.Instance.GameOver();
+		//	GameManager.Instance.camObject.GetComponent<CameraFollowTarget>().ShakeCamera();
+		//}
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
@@ -153,7 +168,18 @@ public class Obstacle : MonoBehaviour
 		waving = false;
 	}
 
-	private void CreateSmallBalls(int numOfBalls)
+    public void ClearSmallBalls()
+    {
+        foreach (GameObject ball in smallBalls)
+        {
+            if (ball != null)
+            {
+                Destroy(ball);
+            }
+        }
+        smallBalls.Clear(); // Xóa danh sách để không còn tham chiếu
+    }
+    private void CreateSmallBalls(int numOfBalls)
 	{
 		int num = 0;
 		int num2 = 360 / numOfBalls;
@@ -165,16 +191,28 @@ public class Obstacle : MonoBehaviour
 			smallBalls[i].transform.localEulerAngles = new Vector3(0f, 0f, num);
 			smallBalls[i].GetComponent<SmallBall>().SetBallSpeed(ballSpeed);
 			num += num2;
-			Color lhs = GameManager.Instance.colorTable[Random.Range(0, GameManager.Instance.colorTable.Length)];
-			if (lhs == color)
+			int imagePos = Random.Range(0, GameManager.Instance.imageTable.Length);
+            Sprite imageObstacle =GameManager.Instance.imageTable[imagePos];
+			if(imagePos==0)
 			{
-				flag = true;
-			}
-			if ((!flag && i == numOfBalls - 1) || id == 1)
+				smallBalls[i].tag = "Gift";
+
+            }
+			else
 			{
-				lhs = color;
-			}
-			smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = lhs;
-		}
+                smallBalls[i].tag = "Obstacle";
+            }
+            smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = imageObstacle;
+            //Color lhs = GameManager.Instance.colorTable[Random.Range(0, GameManager.Instance.colorTable.Length)];
+            //if (lhs == color)
+            //{
+            //	flag = true;
+            //}
+            //if ((!flag && i == numOfBalls - 1) || id == 1)
+            //{
+            //	lhs = color;
+            //}
+            //smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = lhs;
+        }
 	}
 }

@@ -13,94 +13,27 @@ MonoBehaviour:
   m_Name: IAPSettings
   m_EditorClassIdentifier: 
   categoryList:
-  - referenceID: 3097ec21-dab5-4a80-82d4-1cfe4b4c54e7
-    ID: Category 00
-    storeIDs: []
-  - referenceID: 57f68752-04ea-481c-8844-c9ca3141d336
-    ID: Category 04
-    storeIDs: []
-  - referenceID: 2cc7f5ff-954f-45d6-adab-485eea63e7ae
-    ID: Category 05
-    storeIDs: []
-  - referenceID: 5828302c-b240-4850-a91a-10b212f1255c
-    ID: Category 06
-    storeIDs: []
-  - referenceID: 41ce255e-edc1-496e-871e-01cda8f0a8ec
-    ID: Category 07
-    storeIDs: []
-  - referenceID: 39841d36-a030-4270-988c-b1d99708b47f
-    ID: Category 08
-    storeIDs: []
-  - referenceID: 5bb483c1-953a-4b56-a703-aa9e86ca185b
-    ID: Category 09
-    storeIDs: []
-  - referenceID: ebb00b17-b647-4c77-b50f-ee9e7c4ba0ca
-    ID: Category 10
+  - referenceID: 466fceb6-1bdd-4835-9523-2422f93a0dce
+    ID: map
     storeIDs: []
   currencyList:
-  - referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
-    ID: coins
-    baseAmount: 0
+  - referenceID: f04582a2-1a86-4852-97d9-b1fec21bbdfe
+    ID: map
+    baseAmount: 1
     maxAmount: 0
-    icon: {fileID: 21300000, guid: 815c2d1cc82c7f3468708b31017e1ab2, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
   productList:
-  - referenceID: c5ea337a-d2d6-456f-89f5-e8c664caeda8
-    ID: bundle
+  - referenceID: f310ec37-7497-4e56-90f1-2c26a0267b5a
+    ID: product_item_1
     storeIDs: []
     category:
-      rid: 1612389012953104440
-    type: 1
-    title: bundle
-    description: example for a product bundle.
-    discount: 0
-    fetch: 1
-    icon: {fileID: 21300000, guid: bdadc4b6a2b0ff84ba4a581d8bfa8ba5, type: 3}
-    priceList:
-    - type: 0
-      currency:
-        rid: -2
-      product:
-        rid: -2
-      amount: 0
-      realPrice: $4.99
-    rewardList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 1000
-      realPrice: 
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104414
-      amount: 1
-      realPrice: 
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104415
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: c2c7e2c7-0304-45e4-9832-06eb199de3f3
-    ID: coins_small
-    storeIDs: []
-    category:
-      rid: 1612389012953104448
+      rid: 8604102504199749689
     type: 0
-    title: coins
-    description: 1000 coins for virtual purchases.
+    title: Map x2
+    description: Includes x2 Map
     discount: 0
     fetch: 1
-    icon: {fileID: 21300000, guid: 815c2d1cc82c7f3468708b31017e1ab2, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
     - type: 0
       currency:
@@ -108,31 +41,31 @@ MonoBehaviour:
       product:
         rid: -2
       amount: 0
-      realPrice: $1.99
+      realPrice: 0.19$
     rewardList:
     - type: 1
       currency:
-        rid: 1612389012953104413
+        rid: 8604102504199749690
       product:
         rid: -2
-      amount: 1000
+      amount: 2
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
       rid: -2
-  - referenceID: a43d7626-2803-4f77-8abb-d779fa21a306
-    ID: coin_pack
+  - referenceID: 1d6d1e2f-998d-4457-b71c-0e563a108688
+    ID: product_item_2
     storeIDs: []
     category:
-      rid: 1612389012953104448
+      rid: 8604102504199749693
     type: 0
-    title: coin pack
-    description: 2500 coins for virtual purchases.
+    title: Map x4
+    description: Includes x4 Map
     discount: 0
     fetch: 1
-    icon: {fileID: 21300000, guid: 815c2d1cc82c7f3468708b31017e1ab2, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
     - type: 0
       currency:
@@ -140,31 +73,31 @@ MonoBehaviour:
       product:
         rid: -2
       amount: 0
-      realPrice: $3.99
+      realPrice: 0.29$
     rewardList:
     - type: 1
       currency:
-        rid: 1612389012953104413
+        rid: 8604102504199749694
       product:
         rid: -2
-      amount: 2500
+      amount: 4
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
       rid: -2
-  - referenceID: 5f3e468b-59a1-4601-972a-31892e27ab15
-    ID: big_coin_pack
+  - referenceID: 3c06ab6b-52f8-44bc-8006-94ef89879745
+    ID: product_item_3
     storeIDs: []
     category:
-      rid: 1612389012953104448
+      rid: 8604102504199749693
     type: 0
-    title: big coin pack
-    description: 6000 coins for virtual purchases.
+    title: Map x6
+    description: Includes x6 Map
     discount: 0
     fetch: 1
-    icon: {fileID: 21300000, guid: 815c2d1cc82c7f3468708b31017e1ab2, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
     - type: 0
       currency:
@@ -172,31 +105,31 @@ MonoBehaviour:
       product:
         rid: -2
       amount: 0
-      realPrice: $7.99
+      realPrice: 0.49$
     rewardList:
     - type: 1
       currency:
-        rid: 1612389012953104413
+        rid: 8604102504199749694
       product:
         rid: -2
-      amount: 6000
+      amount: 6
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
       rid: -2
-  - referenceID: 17ea6cfd-a02a-493f-b3d3-53a3496c8f7a
-    ID: no_ads
+  - referenceID: b21ab94d-2802-40cb-8ea3-f9bd42e097b5
+    ID: product_item_4
     storeIDs: []
     category:
-      rid: 1612389012953104448
-    type: 1
-    title: no ads
-    description: example for a permanent product.
+      rid: 8604102504199749693
+    type: 0
+    title: Map x8
+    description: Includes x8 Map
     discount: 0
     fetch: 1
-    icon: {fileID: 21300000, guid: 65bc96f99ca43b646a50e06c9d8152e4, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
     - type: 0
       currency:
@@ -204,31 +137,159 @@ MonoBehaviour:
       product:
         rid: -2
       amount: 0
-      realPrice: $2.49
+      realPrice: 0.99$
     rewardList:
-    - type: 2
+    - type: 1
       currency:
-        rid: -2
+        rid: 8604102504199749694
       product:
-        rid: 1612389012953104415
-      amount: 1
+        rid: -2
+      amount: 8
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
       rid: -2
-  - referenceID: a832c1c4-cadc-426b-8e4e-cda32d42434b
-    ID: abo_monthly
+  - referenceID: 97eda70a-717f-41dc-a67d-0a97747fb809
+    ID: product_item_5
     storeIDs: []
     category:
-      rid: 1612389012953104448
+      rid: 8604102504199749693
+    type: 0
+    title: Map x10
+    description: Includes x10 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 1.99$
+    rewardList:
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 10
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 4cf441e9-a828-4315-82ec-3fde0f699393
+    ID: product_item_6
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 0
+    title: Map x12
+    description: Includes x12 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 4.99$
+    rewardList:
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 12
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: e8c6cf55-0996-4306-a093-89ed7721bd1d
+    ID: product_item_7
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 0
+    title: Map x14
+    description: Includes x14 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 7.99$
+    rewardList:
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 14
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: fb3d898b-d9d3-49fd-b466-2c65a6c3af31
+    ID: product_item_8
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 0
+    title: Map x16
+    description: Includes x16 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 9.99$
+    rewardList:
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 16
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 3e6c5a13-ccae-446e-a800-76e141570fd6
+    ID: sub_pack_1
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
     type: 2
-    title: subscription 1
-    description: example for a subscription product.
+    title: Subscription pack 1
+    description: Includes x2 Map
     discount: 0
     fetch: 1
-    icon: {fileID: 21300000, guid: e165572b11ad6214a9cf46afd0eaa1fd, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
     - type: 0
       currency:
@@ -236,469 +297,38 @@ MonoBehaviour:
       product:
         rid: -2
       amount: 0
-      realPrice: $0.99
+      realPrice: 1.99$
     rewardList:
     - type: 2
       currency:
         rid: -2
       product:
-        rid: 1612389012953104417
+        rid: 8604102504199749695
       amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 2
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
       rid: -2
-  - referenceID: 0f42277a-14da-4897-a0be-07fd028e8f3a
-    ID: health
+  - referenceID: 4f2ffff1-8955-428d-a05f-4ac824e41d38
+    ID: sub_pack_2
     storeIDs: []
     category:
-      rid: 1612389328136962048
-    type: 0
-    title: health
-    description: example for a consumable product.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 726b92dd1bc8f1346b89333fa23d0605, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 250
-      realPrice: 
-    rewardList: []
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: 514e0c09-4efb-4703-b41e-ea8e8172ee55
-    ID: bonus
-    storeIDs: []
-    category:
-      rid: 1612389328136962048
-    type: 1
-    title: bonus
-    description: example for a permanent product.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 28e09ca5e6e750045a780873903898f7, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 1000
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104419
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: 4272168d-8830-4a4e-99db-b65c35a9330b
-    ID: weapon_1
-    storeIDs: []
-    category:
-      rid: 1612389012953104443
-    type: 1
-    title: weapon 1
-    description: example for a single selectable group.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: a0646f79c4f7e0e47bdf719030b4664a, type: 3}
-    priceList: []
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104421
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: 7bac1269-d945-4d08-89a2-cc8a7d9429a4
-    ID: weapon_2
-    storeIDs: []
-    category:
-      rid: 1612389012953104443
-    type: 1
-    title: weapon 2
-    description: example for a single selectable group.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: a0646f79c4f7e0e47bdf719030b4664a, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 500
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104422
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: d78ab29b-fcf7-4911-9d9d-c30bbfac820a
-    ID: weapon_3
-    storeIDs: []
-    category:
-      rid: 1612389012953104443
-    type: 1
-    title: weapon 3
-    description: example for a single selectable group.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: a0646f79c4f7e0e47bdf719030b4664a, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 1000
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104423
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: a384b267-e3a7-4092-a30c-6946311d69ec
-    ID: gear_1
-    storeIDs: []
-    category:
-      rid: 1612389012953104444
-    type: 1
-    title: gear 1
-    description: example for a multi selectable group.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 535410fa3e3494b49847d552046acb47, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 200
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104425
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: a00f4298-df0d-4f2d-ac71-cf3b8ef84307
-    ID: gear_2
-    storeIDs: []
-    category:
-      rid: 1612389012953104444
-    type: 1
-    title: gear 2
-    description: example for a multi selectable group.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 535410fa3e3494b49847d552046acb47, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 400
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104426
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: 50090fab-c31b-49f4-903e-320d14a4ed9c
-    ID: gear_3
-    storeIDs: []
-    category:
-      rid: 1612389012953104444
-    type: 1
-    title: gear 3
-    description: example for a multi selectable group.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 535410fa3e3494b49847d552046acb47, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 600
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104427
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: 557d6c4a-7405-4b00-8fb1-0de6ab703736
-    ID: secret_1
-    storeIDs: []
-    category:
-      rid: 1612389012953104445
-    type: 1
-    title: secret 1
-    description: example for an unlockable product.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 91e4d4ee7f408e447b89b8bd29ba45e2, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 500
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104429
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs:
-      - Key: level
-        Value: 1
-      label: unlock on level 1
-    nextUpgrade:
-      rid: -2
-  - referenceID: 21e269ca-3e07-4c59-afb0-530e95b2d67b
-    ID: secret_2
-    storeIDs: []
-    category:
-      rid: 1612389012953104445
-    type: 1
-    title: secret 2
-    description: example for an unlockable product.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 91e4d4ee7f408e447b89b8bd29ba45e2, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 750
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104430
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs:
-      - Key: level
-        Value: 2
-      label: unlock on level 2
-    nextUpgrade:
-      rid: -2
-  - referenceID: 85198d8d-29f8-49e2-b8f3-d0ada5134496
-    ID: speed
-    storeIDs: []
-    category:
-      rid: 1612389012953104446
-    type: 1
-    title: speed
-    description: example for an upgradeable product. base level.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 6f3ee196296da2345aafec723f21c754, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 500
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104432
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: 1612389012953104433
-  - referenceID: ff9f58e9-a516-4590-83cc-374842da9839
-    ID: speed_1
-    storeIDs: []
-    category:
-      rid: 1612389012953104446
-    type: 1
-    title: speed 1
-    description: example for an upgradeable product. level 1.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 61f73df092bfad94f8aed638786c1265, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 50
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104433
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: 1612389012953104435
-  - referenceID: c2746012-8c56-470f-96b8-e095c1d05b1e
-    ID: speed_2
-    storeIDs: []
-    category:
-      rid: 1612389012953104446
-    type: 1
-    title: speed 2
-    description: example for an upgradeable product. level 2.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 2bf9ac96244336041ab6d976b0249ba0, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 100
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104435
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: 1612389012953104436
-  - referenceID: c9c0d678-27fd-477f-8446-7bbf8d507c20
-    ID: speed_3
-    storeIDs: []
-    category:
-      rid: 1612389012953104446
-    type: 1
-    title: speed 3
-    description: example for an upgradeable product. level 3.
-    discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: dc09299bb071725478451b761006780a, type: 3}
-    priceList:
-    - type: 1
-      currency:
-        rid: 1612389012953104413
-      product:
-        rid: -2
-      amount: 200
-      realPrice: 
-    rewardList:
-    - type: 2
-      currency:
-        rid: -2
-      product:
-        rid: 1612389012953104436
-      amount: 1
-      realPrice: 
-    requirement:
-      pairs: []
-      label: 
-    nextUpgrade:
-      rid: -2
-  - referenceID: 61c76a0b-4af7-427e-9aad-a1c3942e5ecb
-    ID: abo_weekly
-    storeIDs: []
-    category:
-      rid: 1612389012953104448
+      rid: 8604102504199749693
     type: 2
-    title: subscription 2
-    description: example for a subscription product.
+    title: Subscription pack 2
+    description: Includes x3 Map
     discount: 0
     fetch: 1
-    icon: {fileID: 21300000, guid: e165572b11ad6214a9cf46afd0eaa1fd, type: 3}
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
     - type: 0
       currency:
@@ -706,46 +336,216 @@ MonoBehaviour:
       product:
         rid: -2
       amount: 0
-      realPrice: $0.99
+      realPrice: 2.99%
     rewardList:
     - type: 2
       currency:
         rid: -2
       product:
-        rid: 1612389012953104437
+        rid: 8604102504199749696
       amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 3
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
       rid: -2
-  - referenceID: 6e56ec20-ff9b-456d-abb1-c6647e6dadce
-    ID: energy
+  - referenceID: 0e33c131-6c14-43bd-8a99-343036b0664e
+    ID: sub_pack_3
     storeIDs: []
     category:
-      rid: 1612389012953104447
-    type: 0
-    title: energy
-    description: example for a consumable product. consumed later.
+      rid: 8604102504199749693
+    type: 2
+    title: Subscription pack 3
+    description: Includes x4 Map
     discount: 0
-    fetch: 0
-    icon: {fileID: 21300000, guid: 8500b2f52330eb24286da41b35002e9e, type: 3}
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
     priceList:
-    - type: 1
+    - type: 0
       currency:
-        rid: 1612389012953104413
+        rid: -2
       product:
         rid: -2
-      amount: 250
-      realPrice: 
+      amount: 0
+      realPrice: 4.99$
     rewardList:
     - type: 2
       currency:
         rid: -2
       product:
-        rid: 1612389012953104439
+        rid: 8604102504199749697
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 4
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: b99b252a-4049-41cf-b9c0-7d775a8bc4dc
+    ID: sub_pack_4
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 2
+    title: Subscription pack 4
+    description: Includes x5 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 7.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102504199749698
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
       amount: 5
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: bda4636c-56bd-4d7c-84ac-b13aaeee47ea
+    ID: sub_pack_5
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 2
+    title: Subscription pack 5
+    description: Includes x6 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 9.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102504199749699
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 6
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 4d853c9a-b294-4d7b-b3e2-a6a969b1a515
+    ID: sub_pack_6
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 2
+    title: Subscription pack 6
+    description: Includes x7 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 14.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102504199749700
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 7
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 7a232ac1-bbe4-4ed9-bcc7-d49fc0b54f6f
+    ID: sub_pack_7
+    storeIDs: []
+    category:
+      rid: 8604102504199749693
+    type: 2
+    title: Subscription pack 7
+    description: Includes x8 Map
+    discount: 0
+    fetch: 1
+    icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 19.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102504199749701
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102504199749694
+      product:
+        rid: -2
+      amount: 8
       realPrice: 
     requirement:
       pairs: []
@@ -767,121 +567,48 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 1612389012953104413
+    - rid: 8604102504199749689
+      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 466fceb6-1bdd-4835-9523-2422f93a0dce
+        ID: map
+        storeIDs: []
+    - rid: 8604102504199749690
       type: {class: IAPCurrency, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
-        ID: coins
-        baseAmount: 0
+        referenceID: f04582a2-1a86-4852-97d9-b1fec21bbdfe
+        ID: map
+        baseAmount: 1
         maxAmount: 0
-        icon: {fileID: 21300000, guid: 815c2d1cc82c7f3468708b31017e1ab2, type: 3}
-    - rid: 1612389012953104414
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    - rid: 8604102504199749693
+      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 466fceb6-1bdd-4835-9523-2422f93a0dce
+        ID: map
+        storeIDs: []
+    - rid: 8604102504199749694
+      type: {class: IAPCurrency, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: f04582a2-1a86-4852-97d9-b1fec21bbdfe
+        ID: map
+        baseAmount: 1
+        maxAmount: 0
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+    - rid: 8604102504199749695
       type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: c5ea337a-d2d6-456f-89f5-e8c664caeda8
-        ID: bundle
+        referenceID: 3e6c5a13-ccae-446e-a800-76e141570fd6
+        ID: sub_pack_1
         storeIDs: []
         category:
-          rid: 1612389012953104440
-        type: 1
-        title: bundle
-        description: example for a product bundle.
-        discount: 0
-        fetch: 1
-        icon: {fileID: 21300000, guid: bdadc4b6a2b0ff84ba4a581d8bfa8ba5, type: 3}
-        priceList:
-        - type: 0
-          currency:
-            rid: -2
-          product:
-            rid: -2
-          amount: 0
-          realPrice: $4.99
-        rewardList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 1000
-          realPrice: 
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104414
-          amount: 1
-          realPrice: 
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104415
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104415
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 17ea6cfd-a02a-493f-b3d3-53a3496c8f7a
-        ID: no_ads
-        storeIDs:
-        - active: 1
-          store: GooglePlay
-          ID: no_ads_v2
-        category:
-          rid: 1612389012953104448
-        type: 1
-        title: no ads
-        description: example for a permanent product.
-        discount: 0
-        fetch: 1
-        icon: {fileID: 21300000, guid: 65bc96f99ca43b646a50e06c9d8152e4, type: 3}
-        priceList:
-        - type: 0
-          currency:
-            rid: -2
-          product:
-            rid: -2
-          amount: 0
-          realPrice: $2.49
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104415
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104417
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: a832c1c4-cadc-426b-8e4e-cda32d42434b
-        ID: abo_monthly
-        storeIDs:
-        - active: 1
-          store: AppleAppStore
-          ID: sub_renew
-        - active: 1
-          store: PayPal
-          ID: P-6TN64933079336525MIBZDVI
-        category:
-          rid: 1612389012953104448
+          rid: 8604102504199749693
         type: 2
-        title: subscription 1
-        description: example for a subscription product.
+        title: Subscription pack 1
+        description: Includes x2 Map
         discount: 0
         fetch: 1
-        icon: {fileID: 21300000, guid: e165572b11ad6214a9cf46afd0eaa1fd, type: 3}
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
         priceList:
         - type: 0
           currency:
@@ -889,492 +616,41 @@ MonoBehaviour:
           product:
             rid: -2
           amount: 0
-          realPrice: $0.99
+          realPrice: 1.99$
         rewardList:
         - type: 2
           currency:
             rid: -2
           product:
-            rid: 1612389012953104417
+            rid: 8604102504199749695
           amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
+          amount: 2
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
           rid: -2
-    - rid: 1612389012953104419
+    - rid: 8604102504199749696
       type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: 514e0c09-4efb-4703-b41e-ea8e8172ee55
-        ID: bonus
+        referenceID: 4f2ffff1-8955-428d-a05f-4ac824e41d38
+        ID: sub_pack_2
         storeIDs: []
         category:
-          rid: 1612389012953104442
-        type: 1
-        title: bonus
-        description: example for a permanent product.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 28e09ca5e6e750045a780873903898f7, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 1000
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104419
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104421
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 4272168d-8830-4a4e-99db-b65c35a9330b
-        ID: weapon_1
-        storeIDs: []
-        category:
-          rid: 1612389012953104443
-        type: 1
-        title: weapon 1
-        description: example for a single selectable group.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: a0646f79c4f7e0e47bdf719030b4664a, type: 3}
-        priceList: []
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104421
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104422
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 7bac1269-d945-4d08-89a2-cc8a7d9429a4
-        ID: weapon_2
-        storeIDs: []
-        category:
-          rid: 1612389012953104443
-        type: 1
-        title: weapon 2
-        description: example for a single selectable group.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: a0646f79c4f7e0e47bdf719030b4664a, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 500
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104422
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104423
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: d78ab29b-fcf7-4911-9d9d-c30bbfac820a
-        ID: weapon_3
-        storeIDs: []
-        category:
-          rid: 1612389012953104443
-        type: 1
-        title: weapon 3
-        description: example for a single selectable group.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: a0646f79c4f7e0e47bdf719030b4664a, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 1000
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104423
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104425
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: a384b267-e3a7-4092-a30c-6946311d69ec
-        ID: gear_1
-        storeIDs: []
-        category:
-          rid: 1612389012953104444
-        type: 1
-        title: gear 1
-        description: example for a multi selectable group.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 535410fa3e3494b49847d552046acb47, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 200
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104425
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104426
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: a00f4298-df0d-4f2d-ac71-cf3b8ef84307
-        ID: gear_2
-        storeIDs: []
-        category:
-          rid: 1612389012953104444
-        type: 1
-        title: gear 2
-        description: example for a multi selectable group.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 535410fa3e3494b49847d552046acb47, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 400
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104426
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104427
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 50090fab-c31b-49f4-903e-320d14a4ed9c
-        ID: gear_3
-        storeIDs: []
-        category:
-          rid: 1612389012953104444
-        type: 1
-        title: gear 3
-        description: example for a multi selectable group.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 535410fa3e3494b49847d552046acb47, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 600
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104427
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104429
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 557d6c4a-7405-4b00-8fb1-0de6ab703736
-        ID: secret_1
-        storeIDs: []
-        category:
-          rid: 1612389012953104445
-        type: 1
-        title: secret 1
-        description: example for an unlockable product.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 91e4d4ee7f408e447b89b8bd29ba45e2, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 500
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104429
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs:
-          - Key: level
-            Value: 1
-          label: unlock on level 1
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104430
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 21e269ca-3e07-4c59-afb0-530e95b2d67b
-        ID: secret_2
-        storeIDs: []
-        category:
-          rid: 1612389012953104445
-        type: 1
-        title: secret 2
-        description: example for an unlockable product.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 91e4d4ee7f408e447b89b8bd29ba45e2, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 750
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104430
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs:
-          - Key: level
-            Value: 2
-          label: unlock on level 2
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104432
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 85198d8d-29f8-49e2-b8f3-d0ada5134496
-        ID: speed
-        storeIDs: []
-        category:
-          rid: 1612389012953104446
-        type: 1
-        title: speed
-        description: example for an upgradeable product. base level.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 6f3ee196296da2345aafec723f21c754, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 500
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104432
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: 1612389012953104433
-    - rid: 1612389012953104433
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: ff9f58e9-a516-4590-83cc-374842da9839
-        ID: speed_1
-        storeIDs: []
-        category:
-          rid: 1612389012953104446
-        type: 1
-        title: speed 1
-        description: example for an upgradeable product. level 1.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 61f73df092bfad94f8aed638786c1265, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 50
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104433
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: 1612389012953104435
-    - rid: 1612389012953104435
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: c2746012-8c56-470f-96b8-e095c1d05b1e
-        ID: speed_2
-        storeIDs: []
-        category:
-          rid: 1612389012953104446
-        type: 1
-        title: speed 2
-        description: example for an upgradeable product. level 2.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 2bf9ac96244336041ab6d976b0249ba0, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 100
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104435
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: 1612389012953104436
-    - rid: 1612389012953104436
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: c9c0d678-27fd-477f-8446-7bbf8d507c20
-        ID: speed_3
-        storeIDs: []
-        category:
-          rid: 1612389012953104446
-        type: 1
-        title: speed 3
-        description: example for an upgradeable product. level 3.
-        discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: dc09299bb071725478451b761006780a, type: 3}
-        priceList:
-        - type: 1
-          currency:
-            rid: 1612389012953104413
-          product:
-            rid: -2
-          amount: 200
-          realPrice: 
-        rewardList:
-        - type: 2
-          currency:
-            rid: -2
-          product:
-            rid: 1612389012953104436
-          amount: 1
-          realPrice: 
-        requirement:
-          pairs: []
-          label: 
-        nextUpgrade:
-          rid: -2
-    - rid: 1612389012953104437
-      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 61c76a0b-4af7-427e-9aad-a1c3942e5ecb
-        ID: abo_weekly
-        storeIDs:
-        - active: 1
-          store: AppleAppStore
-          ID: sub_renew2
-        - active: 1
-          store: PayPal
-          ID: P-6TN64933079336525MIBZDVI
-        category:
-          rid: 1612389012953104448
+          rid: 8604102504199749693
         type: 2
-        title: subscription 2
-        description: example for a subscription product.
+        title: Subscription pack 2
+        description: Includes x3 Map
         discount: 0
         fetch: 1
-        icon: {fileID: 21300000, guid: e165572b11ad6214a9cf46afd0eaa1fd, type: 3}
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
         priceList:
         - type: 0
           currency:
@@ -1382,48 +658,104 @@ MonoBehaviour:
           product:
             rid: -2
           amount: 0
-          realPrice: $0.99
+          realPrice: 2.99%
         rewardList:
         - type: 2
           currency:
             rid: -2
           product:
-            rid: 1612389012953104437
+            rid: 8604102504199749696
           amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
+          amount: 3
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
           rid: -2
-    - rid: 1612389012953104439
+    - rid: 8604102504199749697
       type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: 6e56ec20-ff9b-456d-abb1-c6647e6dadce
-        ID: energy
+        referenceID: 0e33c131-6c14-43bd-8a99-343036b0664e
+        ID: sub_pack_3
         storeIDs: []
         category:
-          rid: 1612389012953104447
-        type: 0
-        title: energy
-        description: example for a consumable product. consumed later.
+          rid: 8604102504199749693
+        type: 2
+        title: Subscription pack 3
+        description: Includes x4 Map
         discount: 0
-        fetch: 0
-        icon: {fileID: 21300000, guid: 8500b2f52330eb24286da41b35002e9e, type: 3}
+        fetch: 1
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
         priceList:
-        - type: 1
+        - type: 0
           currency:
-            rid: 1612389012953104413
+            rid: -2
           product:
             rid: -2
-          amount: 250
-          realPrice: 
+          amount: 0
+          realPrice: 4.99$
         rewardList:
         - type: 2
           currency:
             rid: -2
           product:
-            rid: 1612389012953104439
+            rid: 8604102504199749697
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
+          amount: 4
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102504199749698
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: b99b252a-4049-41cf-b9c0-7d775a8bc4dc
+        ID: sub_pack_4
+        storeIDs: []
+        category:
+          rid: 8604102504199749693
+        type: 2
+        title: Subscription pack 4
+        description: Includes x5 Map
+        discount: 0
+        fetch: 1
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 7.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102504199749698
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
           amount: 5
           realPrice: 
         requirement:
@@ -1431,57 +763,129 @@ MonoBehaviour:
           label: 
         nextUpgrade:
           rid: -2
-    - rid: 1612389012953104440
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
+    - rid: 8604102504199749699
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: ebb00b17-b647-4c77-b50f-ee9e7c4ba0ca
-        ID: Category 10
+        referenceID: bda4636c-56bd-4d7c-84ac-b13aaeee47ea
+        ID: sub_pack_5
         storeIDs: []
-    - rid: 1612389012953104442
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
+        category:
+          rid: 8604102504199749693
+        type: 2
+        title: Subscription pack 5
+        description: Includes x6 Map
+        discount: 0
+        fetch: 1
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 9.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102504199749699
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
+          amount: 6
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102504199749700
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: 57f68752-04ea-481c-8844-c9ca3141d336
-        ID: Category 04
+        referenceID: 4d853c9a-b294-4d7b-b3e2-a6a969b1a515
+        ID: sub_pack_6
         storeIDs: []
-    - rid: 1612389012953104443
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
+        category:
+          rid: 8604102504199749693
+        type: 2
+        title: Subscription pack 6
+        description: Includes x7 Map
+        discount: 0
+        fetch: 1
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 14.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102504199749700
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
+          amount: 7
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102504199749701
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
       data:
-        referenceID: 41ce255e-edc1-496e-871e-01cda8f0a8ec
-        ID: Category 07
+        referenceID: 7a232ac1-bbe4-4ed9-bcc7-d49fc0b54f6f
+        ID: sub_pack_7
         storeIDs: []
-    - rid: 1612389012953104444
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 39841d36-a030-4270-988c-b1d99708b47f
-        ID: Category 08
-        storeIDs: []
-    - rid: 1612389012953104445
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 5bb483c1-953a-4b56-a703-aa9e86ca185b
-        ID: Category 09
-        storeIDs: []
-    - rid: 1612389012953104446
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 5828302c-b240-4850-a91a-10b212f1255c
-        ID: Category 06
-        storeIDs: []
-    - rid: 1612389012953104447
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 2cc7f5ff-954f-45d6-adab-485eea63e7ae
-        ID: Category 05
-        storeIDs: []
-    - rid: 1612389012953104448
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 3097ec21-dab5-4a80-82d4-1cfe4b4c54e7
-        ID: Category 00
-        storeIDs: []
-    - rid: 1612389328136962048
-      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
-      data:
-        referenceID: 57f68752-04ea-481c-8844-c9ca3141d336
-        ID: Category 04
-        storeIDs: []
+        category:
+          rid: 8604102504199749693
+        type: 2
+        title: Subscription pack 7
+        description: Includes x8 Map
+        discount: 0
+        fetch: 1
+        icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 19.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102504199749701
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102504199749694
+          product:
+            rid: -2
+          amount: 8
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2

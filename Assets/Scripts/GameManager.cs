@@ -1,4 +1,4 @@
-
+﻿
 
 using UnityEngine;
 
@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
 
 	private Vector2 flyDestination;
 
+	private GameObject currentObstacle;
+
+
+	public Sprite[] imageTable;
 	public static GameManager Instance
 	{
 		get;
@@ -58,6 +62,14 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
+		Sprite[] imageObstacle = Resources.LoadAll<Sprite>("ObstacleSprite");
+		Sprite[] imagePlayer = Resources.LoadAll<Sprite>("PlayerSprite");
+        imageTable = new Sprite[imageObstacle.Length + imagePlayer.Length];
+
+        imagePlayer.CopyTo(imageTable, 0);
+        imageObstacle.CopyTo(imageTable, imagePlayer.Length);
+		
+		Debug.Log(imageTable.Length);
 		Object.DontDestroyOnLoad(this);
 		if (Instance == null)
 		{
@@ -95,7 +107,8 @@ public class GameManager : MonoBehaviour
 				movingPlayer = false;
 				readyToShoot = true;
 				flyDestination = tempObstacle.transform.position;
-			}
+             
+            }
 		}
 		else if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButtonUp(0))
 		{
@@ -111,12 +124,15 @@ public class GameManager : MonoBehaviour
 		//player.GetComponent<SpriteRenderer>().color = tempColor;
 		previousObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
 		previousObstacle.transform.position = new Vector2(0f, -3f);
+
 		tempObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
 		tempObstacle.transform.position = new Vector2(0f, 3f);
 		flyDestination = tempObstacle.transform.position;
 		previousObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
 		previousObstacle.GetComponent<Obstacle>().SetNextObstaclePosition(tempObstacle.transform.position);
 		obstacleId++;
+		Debug.Log(colorTable.Length);
+		Debug.Log(tempColor);
 		tempColor = colorTable[Random.Range(0, colorTable.Length)];
 		tempObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
 		camObject.transform.position = new Vector3(0f, 0f, -10f);
@@ -124,25 +140,33 @@ public class GameManager : MonoBehaviour
 		readyToShoot = true;
 	}
 
+
 	public void ShotBall()
 	{
+		Debug.Log("Shotball");
 		readyToShoot = false;
 		movingPlayer = true;
 		CreateNextObstacle();
 		camObject.GetComponent<CameraFollowTarget>().EnableDisableFollow(status: true);
+
 	}
 
 	private void CreateNextObstacle()
 	{
-		obstacleId++;
+		
+        Debug.Log("CreateNextObstacle");
+        obstacleId++;
 		tempColor = colorTable[Random.Range(0, colorTable.Length)];
 		float num = UnityEngine.Random.Range(yMinDistanceBetweenObstacles, yMaxDistanceBetweenObstacles);
 		previousObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
 		previousObstacle.transform.position = new Vector2(tempObstacle.transform.position.x + UnityEngine.Random.Range(0f - maxXDistanceNextObstacle, maxXDistanceNextObstacle), tempObstacle.transform.position.y + num);
-		previousObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
+
+        previousObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
 		tempObstacle.GetComponent<Obstacle>().SetNextObstaclePosition(previousObstacle.transform.position);
-		tempObstacle = previousObstacle;
-	}
+       
+        tempObstacle = previousObstacle;
+     
+    }
 
 	public void PlayerDeath()
 	{
