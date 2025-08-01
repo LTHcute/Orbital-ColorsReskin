@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1790619877175634839}
   m_Layer: 0
   m_Name: SmallBall
-  m_TagString: SmallBall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 1790619876554877845}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: SmallBall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,8 +95,8 @@ Transform:
   m_GameObject: {fileID: 1790619875598576525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0146, y: 1.4004, z: 0}
-  m_LocalScale: {x: 1.0731195, y: 1.1953143, z: 1}
+  m_LocalPosition: {x: -0.0944, y: 1.2897, z: 0}
+  m_LocalScale: {x: 0.8736717, y: 0.918617, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1790619875648908174}

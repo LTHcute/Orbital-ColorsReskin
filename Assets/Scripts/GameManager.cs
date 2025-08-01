@@ -1,6 +1,11 @@
 ﻿
 
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UniPay;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +21,7 @@ public class GameManager : MonoBehaviour
 	public GameObject player;
 
 	[Space(5f)]
-	public int playerSpeed;
+	public int playerSpeed = 1;
 
 	[Space(5f)]
 	public Color[] colorTable;
@@ -51,16 +56,26 @@ public class GameManager : MonoBehaviour
 	private Vector2 flyDestination;
 
 	private GameObject currentObstacle;
+    public Text currency;
 
-
-	public Sprite[] imageTable;
+    public Sprite[] imageTable;
 	public static GameManager Instance
 	{
 		get;
 		set;
 	}
+    public GameObject store;
 
-	private void Awake()
+    [Header("Wind & Trajectory")]
+    public LineRenderer trajectoryLine;
+    public int trajectoryPointCount = 30;
+    public Vector2 windForce = new Vector2(1f, 0f);
+    private bool isCurvedTrajectory = false; // NEW
+    private Vector2 cachedControlPoint;
+    private bool controlPointGenerated = false;
+    private List<Vector2> flyPathPoints = new List<Vector2>();
+
+    private void Awake()
 	{
 		Sprite[] imageObstacle = Resources.LoadAll<Sprite>("ObstacleSprite");
 		Sprite[] imagePlayer = Resources.LoadAll<Sprite>("PlayerSprite");
@@ -86,72 +101,187 @@ public class GameManager : MonoBehaviour
 		Physics2D.gravity = new Vector2(0f, 0f);
 		Application.targetFrameRate = 30;
 		step = (float)playerSpeed * Time.deltaTime;
-		CreateScene();
-	}
+        CreateScene();
+        DrawLineToTarget(player.transform.position, tempObstacle.transform.position);
+    }
 
 	private void Update()
 	{
-		
-		if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButtonDown(0))
-		{
-			if (!uIManager.IsButton() && readyToShoot && !movingPlayer)
-			{
-				ShotBall();
-			}
-		}
-		else if (uIManager.gameState == GameState.PLAYING && movingPlayer)
-		{
-			player.transform.position = Vector2.MoveTowards(player.transform.position, flyDestination, step);
-			if (Vector2.Distance(player.transform.position, flyDestination) < 0.001f)
-			{
-				movingPlayer = false;
-				readyToShoot = true;
-				flyDestination = tempObstacle.transform.position;
-             
+        currency.text = DBManager.GetCurrency("map").ToString();
+        if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButtonDown(0))
+        {
+            if (!uIManager.IsButton() && readyToShoot && !movingPlayer)
+            {
+                ShotBall();
             }
-		}
-		else if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButtonUp(0))
-		{
-			readyToShoot = true;
-		}
-	}
+        }
+        else if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButtonUp(0))
+        {
+            readyToShoot = true;
+        }
 
-	public void CreateScene()
+        if (uIManager.gameState == GameState.PLAYING && readyToShoot && !movingPlayer)
+        {
+         
+            DrawLineToTarget(player.transform.position, tempObstacle.transform.position);
+        }
+        Obstacle currentObs = GetCurrentObstacleUnderPlayer();
+    }
+    private void DrawCurvedLine(Vector2 startPos, Vector2 endPos)
+    {
+        trajectoryLine.positionCount = trajectoryPointCount;
+
+        if (!controlPointGenerated)
+        {
+            Vector2 midPoint = (startPos + endPos) / 2f;
+            Vector2 dir = endPos - startPos;
+
+           
+            Vector2 perpendicular = Vector2.Perpendicular(dir).normalized;
+
+         
+            float flip = Random.value < 0.5f ? 1f : -1f;
+
+            float curveStrength = Random.Range(1.5f, 3.5f);
+            cachedControlPoint = midPoint + perpendicular * flip * curveStrength;
+
+            controlPointGenerated = true;
+        }
+
+        for (int i = 0; i < trajectoryPointCount; i++)
+        {
+            float t = i / (float)(trajectoryPointCount - 1);
+            Vector2 point = Mathf.Pow(1 - t, 2) * startPos +
+                            2 * (1 - t) * t * cachedControlPoint +
+                            Mathf.Pow(t, 2) * endPos;
+
+            trajectoryLine.SetPosition(i, point);
+        }
+    }
+
+    private void DrawStraightLine(Vector2 startPos, Vector2 targetPos)
+    {
+        trajectoryLine.positionCount = 2;
+        trajectoryLine.SetPosition(0, startPos);
+        trajectoryLine.SetPosition(1, targetPos);
+    }
+    private IEnumerator MovePlayerAlongCurve(Vector2 startPos, Vector2 controlPoint, Vector2 endPos, float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            float t = time / duration;
+            Vector2 pos = Mathf.Pow(1 - t, 2) * startPos +
+                          2 * (1 - t) * t * controlPoint +
+                          Mathf.Pow(t, 2) * endPos;
+
+            player.transform.position = pos;
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        player.transform.position = endPos;
+
+        OnPlayerArrived();
+    }
+    private void OnPlayerArrived()
+    {
+        movingPlayer = false;
+        readyToShoot = true;
+    //    flyDestination = tempObstacle.transform.position;
+        CreateNextObstacle();
+    }
+
+    private IEnumerator MovePlayerAlongStraight(Vector2 startPos, Vector2 endPos, float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            float t = time / duration;
+            Vector2 pos = Vector2.Lerp(startPos, endPos, t);
+            player.transform.position = pos;
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        player.transform.position = endPos;
+
+        OnPlayerArrived();
+    }
+
+
+    public Obstacle GetCurrentObstacleUnderPlayer()
+    {
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        Vector2 playerPos = player.transform.position;
+
+        foreach (GameObject obs in obstacles)
+        {
+          
+            if (Vector2.Distance(obs.transform.position, playerPos) < 0.1f)
+            {
+                Debug.Log("Player đang đứng trên obstacle ID: "+ obs.transform.position);
+				Destroy(obs);
+            }
+        }
+
+        return null; 
+    }
+
+
+    public void CreateScene()
 	{
-		ResetPlayerAnimation();
-		obstacleId = 0;
-		tempColor = colorTable[Random.Range(0, colorTable.Length)];
-		//player.GetComponent<SpriteRenderer>().color = tempColor;
-		previousObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
-		previousObstacle.transform.position = new Vector2(0f, -3f);
+	
 
-		tempObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
-		tempObstacle.transform.position = new Vector2(0f, 3f);
-		flyDestination = tempObstacle.transform.position;
-		previousObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
-		previousObstacle.GetComponent<Obstacle>().SetNextObstaclePosition(tempObstacle.transform.position);
-		obstacleId++;
-		Debug.Log(colorTable.Length);
-		Debug.Log(tempColor);
-		tempColor = colorTable[Random.Range(0, colorTable.Length)];
-		tempObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
-		camObject.transform.position = new Vector3(0f, 0f, -10f);
-		player.transform.position = previousObstacle.transform.position;
-		readyToShoot = true;
-	}
+      //  ResetPlayerAnimation();
+        obstacleId = 0;
+        tempColor = colorTable[Random.Range(0, colorTable.Length)];
+        tempObstacle = UnityEngine.Object.Instantiate(obstaclePrefab);
+        tempObstacle.transform.position = new Vector2(0f, 3f);
+        flyDestination = tempObstacle.transform.position;
+        obstacleId++;
+        Debug.Log(colorTable.Length);
+        Debug.Log(tempColor);
+        tempColor = colorTable[Random.Range(0, colorTable.Length)];
+        tempObstacle.GetComponent<Obstacle>().SetObstacle(tempColor, obstacleId);
+        camObject.transform.position = new Vector3(0f, 0f, -10f);
+        player.transform.position = new Vector2(0f, -3f);
+        readyToShoot = true;
+        controlPointGenerated = false;
+
+    }
 
 
-	public void ShotBall()
+    public void ShotBall()
 	{
-		Debug.Log("Shotball");
-		readyToShoot = false;
-		movingPlayer = true;
-		CreateNextObstacle();
-		camObject.GetComponent<CameraFollowTarget>().EnableDisableFollow(status: true);
+		
 
-	}
+        Debug.Log("Shotball");
+        readyToShoot = false;
+        movingPlayer = true;
+        camObject.GetComponent<CameraFollowTarget>().EnableDisableFollow(status: true);
+        isCurvedTrajectory = Random.value < 0.5f; // 50% cong - 50% thẳng
+        trajectoryLine.positionCount = 0;
 
-	private void CreateNextObstacle()
+        Vector2 startPos = player.transform.position;
+        Vector2 endPos = tempObstacle.transform.position;
+
+      
+        DrawCurvedLine(startPos, endPos);
+        StartCoroutine(MovePlayerAlongCurve(startPos, cachedControlPoint, endPos, 0.7f));
+      
+      
+    }
+
+    private void DrawLineToTarget(Vector2 startPos, Vector2 endPos)
+    {
+            DrawCurvedLine(startPos, endPos);
+       
+    }
+
+    private void CreateNextObstacle()
 	{
 		
         Debug.Log("CreateNextObstacle");
@@ -165,10 +295,11 @@ public class GameManager : MonoBehaviour
 		tempObstacle.GetComponent<Obstacle>().SetNextObstaclePosition(previousObstacle.transform.position);
        
         tempObstacle = previousObstacle;
-     
+        controlPointGenerated = false;
+
     }
 
-	public void PlayerDeath()
+    public void PlayerDeath()
 	{
 		camObject.GetComponent<CameraFollowTarget>().ShakeCamera();
 		player.GetComponent<Player>().PlayGameOver();
@@ -195,6 +326,14 @@ public class GameManager : MonoBehaviour
 		camObject.GetComponent<CameraFollowTarget>().EnableDisableFollow(status: false);
 	}
 
+    public void OpenStore()
+    {
+        if (uIManager.gameState == GameState.PAUSED)
+        {
+            Time.timeScale = 1f;
+        }
+        store.SetActive(true);
+    }    
 	public void ClearScene()
 	{
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");

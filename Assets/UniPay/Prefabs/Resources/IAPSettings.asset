@@ -19,7 +19,7 @@ MonoBehaviour:
   currencyList:
   - referenceID: f04582a2-1a86-4852-97d9-b1fec21bbdfe
     ID: map
-    baseAmount: 1
+    baseAmount: 3
     maxAmount: 0
     icon: {fileID: 21300000, guid: efb036d15f15b784c987cc49432b8a27, type: 3}
   productList:

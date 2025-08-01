@@ -1,5 +1,6 @@
 
 
+using UniPay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,8 @@ public class ScoreManager : MonoBehaviour
 
 	private bool counting;
 
-	public static ScoreManager Instance
+    public Text currency;
+    public static ScoreManager Instance
 	{
 		get;
 		set;
@@ -38,9 +40,16 @@ public class ScoreManager : MonoBehaviour
 		}
 	}
 
+	void Update()
+	{
+        currency.text = DBManager.GetCurrency("map").ToString();
+    }	
+
 	private void Start()
 	{
-		if (!PlayerPrefs.HasKey("HighScore"))
+       
+
+        if (!PlayerPrefs.HasKey("HighScore"))
 		{
 			PlayerPrefs.SetInt("HighScore", 0);
 		}
@@ -51,7 +60,8 @@ public class ScoreManager : MonoBehaviour
 
 	private void UpdateHighScore()
 	{
-		if (currentScore > highScore)
+        currency.text = DBManager.GetCurrency("map").ToString();
+        if (currentScore > highScore)
 		{
 			highScore = currentScore;
 		}

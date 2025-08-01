@@ -76,24 +76,25 @@ public class Obstacle : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (!collision.CompareTag("Player"))
-		{
-			return;
-		}
+		//if (!collision.CompareTag("Player"))
+		//{
+		//	return;
+		//}
 		//Debug.Log(collision.gameObject.tag);
-		//if(collision.gameObject.tag == "Gift")
+	
+		//if (collision.gameObject.tag == "Gift")
 		//{
 		//	Debug.Log("Va vào gift");
-  //          PlayWaveIn();
-  //          ActivateAim();
-  //          for (int i = 0; i < smallBalls.Count; i++)
-  //          {
-  //              if (smallBalls[i] != null)
-  //              {
-  //                  smallBalls[i].GetComponent<SmallBall>().HideBall();
-  //              }
-  //          }
-  //      }	
+		//	PlayWaveIn();
+		//	ActivateAim();
+		//	for (int i = 0; i < smallBalls.Count; i++)
+		//	{
+		//		if (smallBalls[i] != null)
+		//		{
+		//			smallBalls[i].GetComponent<SmallBall>().HideBall();
+		//		}
+		//	}
+		//}
 		//if (collision.gameObject.GetComponent<SpriteRenderer>().color == color)
 		//{
 		//	PlayWaveIn();
@@ -118,11 +119,11 @@ public class Obstacle : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Player"))
-		{
-			PlayWaveOut();
-			DeActivateAim();
-		}
+		//if (collision.CompareTag("Player"))
+		//{
+		//	PlayWaveOut();
+		//	DeActivateAim();
+		//}
 	}
 
 	public void ActivateAim()
@@ -193,26 +194,24 @@ public class Obstacle : MonoBehaviour
 			num += num2;
 			int imagePos = Random.Range(0, GameManager.Instance.imageTable.Length);
             Sprite imageObstacle =GameManager.Instance.imageTable[imagePos];
-			//if(imagePos==0)
-			//{
-			//	smallBalls[i].tag = "Gift";
+            Transform child = smallBalls[i].transform.Find("Ball");
+            if (imagePos == 0)
+			{
+                child.tag = "Gift";
+                flag = true;
+            }
+			else
+			{
+                child.tag = "Shark";
+            }
 
-   //         }
-			//else
-			//{
-   //             smallBalls[i].tag = "Obstacle";
-   //         }
-   //         smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = imageObstacle;
-            //Color lhs = GameManager.Instance.colorTable[Random.Range(0, GameManager.Instance.colorTable.Length)];
-            //if (lhs == color)
-            //{
-            //	flag = true;
-            //}
-            //if ((!flag && i == numOfBalls - 1) || id == 1)
-            //{
-            //	lhs = color;
-            //}
-            //smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = lhs;
+			//Debug.Log($"TAg:{smallBalls[i].tag}");
+
+			if ((!flag && i == numOfBalls - 1))
+			{
+				imagePos = 0;
+			}
+			smallBalls[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = imageObstacle;
         }
-	}
+    }
 }

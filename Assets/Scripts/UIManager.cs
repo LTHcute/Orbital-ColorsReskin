@@ -1,6 +1,8 @@
 
 
+using System.Collections;
 using System.Collections.Generic;
+using UniPay;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -22,6 +24,8 @@ public class UIManager : MonoBehaviour
 
 	private bool clicked;
 
+
+	public GameObject notications;
 	private void Start()
 	{
 		introGui.SetActive(true);
@@ -35,9 +39,21 @@ public class UIManager : MonoBehaviour
 
 	}
 
-	void ShowMainMenuGui()
+
+    public void ShowNotification()
+    {
+        notications.SetActive(true);
+        StartCoroutine(HideNotification());
+    }
+
+    IEnumerator HideNotification()
+    {
+        yield return new WaitForSeconds(1f);
+        notications.SetActive(false);
+    }
+    void ShowMainMenuGui()
 	{
-	//	GameManager.Instance.ShowPlayer();
+	GameManager.Instance.ShowPlayer();
 		mainMenuGui.SetActive(true);
 		introGui.SetActive(false);
         pauseGui.SetActive(value: false);
@@ -63,8 +79,28 @@ public class UIManager : MonoBehaviour
 		}
 	}
 
+	public void ContinuePlay()
+	{
+        int playCount = DBManager.GetCurrency("map");
+       
+        if (playCount == 0)
+		{
+			ShowNotification();
+			return;
+
+        }	
+        gameplayGui.SetActive(value: true);
+        pauseGui.SetActive(value: false);
+        gameOverGui.SetActive(value: false);
+        Time.timeScale = 1f;
+        gameState = GameState.PLAYING;
+        AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+        DBManager.SetCurrency("map", playCount - 1);
+    }	
+
 	public void ShowMainMenu()
 	{
+		
 		Debug.Log("show main menu");
 		ScoreManager.Instance.ResetCurrentScore();
 		clicked = true;
@@ -86,7 +122,8 @@ public class UIManager : MonoBehaviour
 	{
 		if (gameState != GameState.PAUSED)
 		{
-			pauseGui.SetActive(value: true);
+            gameplayGui.SetActive(value: false);
+            pauseGui.SetActive(value: true);
 			Time.timeScale = 0f;
 			gameState = GameState.PAUSED;
 			AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
@@ -95,7 +132,8 @@ public class UIManager : MonoBehaviour
 
 	public void HidePauseMenu()
 	{
-		pauseGui.SetActive(value: false);
+        gameplayGui.SetActive(value: true);
+        pauseGui.SetActive(value: false);
 		Time.timeScale = 1f;
 		gameState = GameState.PLAYING;
 		AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);

@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Obstacle
-  - SmallBall
   - Gift
+  - Shark
   layers:
   - Default
   - TransparentFX

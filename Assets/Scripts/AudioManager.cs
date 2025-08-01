@@ -57,7 +57,11 @@ public class AudioManager : MonoBehaviour
 				musicSource.Play();
 			}
 		}
-	}
+        if (!muteEfx)
+        {
+            efxSource.PlayOneShot(clip);
+        }
+    }
 
 	private void StopMusic()
 	{
