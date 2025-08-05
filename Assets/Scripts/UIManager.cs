@@ -151,7 +151,8 @@ public class UIManager : MonoBehaviour
 
 	public void ShowGameOver()
 	{
-		mainMenuGui.SetActive(value: false);
+      
+        mainMenuGui.SetActive(value: false);
 		pauseGui.SetActive(value: false);
 		gameplayGui.SetActive(value: false);
 		gameOverGui.SetActive(value: true);

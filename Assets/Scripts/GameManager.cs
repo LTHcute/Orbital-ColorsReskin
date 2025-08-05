@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
          
             DrawLineToTarget(player.transform.position, tempObstacle.transform.position);
         }
+        if (uIManager.gameState == GameState.MENU && readyToShoot && !movingPlayer)
+        {
+
+            DrawLineToTarget(player.transform.position, tempObstacle.transform.position);
+        }
         Obstacle currentObs = GetCurrentObstacleUnderPlayer();
     }
     private void DrawCurvedLine(Vector2 startPos, Vector2 endPos)
