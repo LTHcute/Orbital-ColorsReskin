@@ -1,4 +1,4 @@
-
+﻿
 
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 	[Header("Background Music")]
 	public AudioClip menuMusic;
 
-	public AudioClip gameMusic;
+	
 
 	[Header("Sound Effects")]
 	public AudioClip buttonClick;
@@ -47,25 +47,34 @@ public class AudioManager : MonoBehaviour
 		PlayMusic(menuMusic);
 	}
 
-	public void PlayMusic(AudioClip clip)
-	{
-		if (!muteMusic)
-		{
-			musicSource.clip = clip;
-			if (!musicSource.isPlaying)
-			{
-				musicSource.Play();
-			}
-		}
-        if (!muteEfx)
+	//public void PlayMusic(AudioClip clip)
+	//{
+	//	if (!muteMusic)
+	//	{
+	//		musicSource.clip = clip;
+	//		if (!musicSource.isPlaying)
+	//		{
+	//			musicSource.Play();
+	//		}
+	//	}
+ //       if (!muteEfx)
+ //       {
+ //           efxSource.PlayOneShot(clip);
+ //       }
+ //   }
+    public void PlayMusic(AudioClip clip)
+    {
+        if (!muteMusic)
         {
-            efxSource.PlayOneShot(clip);
+            musicSource.clip = clip;
+            musicSource.loop = true; 
+            musicSource.Play();
         }
     }
-
-	private void StopMusic()
+    private void StopMusic()
 	{
 		musicSource.Stop();
+		
 	}
 
 	public void PlayEffects(AudioClip clip)
